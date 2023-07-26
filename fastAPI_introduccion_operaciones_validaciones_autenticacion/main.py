@@ -13,6 +13,14 @@ movies = [
         'year': '2009',
         'rating': 7.8,
         'category': 'Acción'    
+    },
+    {
+        'id': 2,
+        'title': 'Avatar 2',
+        'overview': "La misma historia en pandora pero diferente ...",
+        'year': '2021',
+        'rating': 7.8,
+        'category': 'Acción'    
     } 
 ]
 
@@ -25,3 +33,11 @@ def message():
 @app.get('/movies', tags=['movies'])
 def get_movies():
     return movies
+
+# Creando endpoints usando parametros
+@app.get('/movies/{id}', tags=['movies'])
+def get_movie(id: int):
+    for item in movies:
+        if item["id"] == id:
+            return item
+    return []
