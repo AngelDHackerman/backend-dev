@@ -34,10 +34,18 @@ def message():
 def get_movies():
     return movies
 
-# Creando endpoints usando parametros
+# Filtrando peliculas por parametro
+# Filtrado por ID
 @app.get('/movies/{id}', tags=['movies'])
 def get_movie(id: int):
     for item in movies:
         if item["id"] == id:
             return item
     return []
+
+# Filtrando peliculas por categoria
+# Filtrado por parametro Query (no se especifica un ID, en el endpoit)
+@app.get('/movies/', tags=['movies'])
+def get_movies_by_category(category: str):
+    category_movies = [movie for movie in movies if movie["category"] == category]
+    return category_movies
