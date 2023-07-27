@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Body
 from fastapi.responses import HTMLResponse
-from pydantic import BaseModel  # usado para validar si los objetos de entrada cumple con el formato que espera la API. 
+from pydantic import BaseModel, Field  # usado para validar si los objetos de entrada cumple con el formato que espera la API. Field se usa para validaciones
 from typing import Optional
 
 app = FastAPI()
@@ -10,11 +10,24 @@ app.version = '0.0.1'  # modificando la version de la API
 # Creando el esquema de datos
 class Movie(BaseModel):
     id: Optional[int] = None  # Creando un parametro opcional 
-    title: str
-    overview: str
-    year: int
+    title: str = Field(min_length=5 ,max_length=25)
+    overview: str = Field(min_length=5 ,max_length=55)
+    year: int = Field(le=2023)  # le=2023, valor menor o igual a 2023 
     rating: float
     category: str
+
+    # Creando valores "Default" para cada clave/valor de body de la clase movie: 
+    class Config: 
+        schema_extra = { 
+            "example": {
+                "id": 1,
+                "title": "Title of the movie",
+                "overview": "Overview of the movie",
+                "year": 2000,
+                "rating": 9.8,
+                "category": "Action"
+            }
+        }
 
 movies = [
     {
