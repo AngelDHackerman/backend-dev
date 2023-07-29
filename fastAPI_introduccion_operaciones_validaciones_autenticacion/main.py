@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Body, Path, Query
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, Field  # usado para validar si los objetos de entrada cumple con el formato que espera la API. Field se usa para validaciones
 from typing import Optional
 
@@ -56,7 +56,7 @@ def message():
 # Segundo endpoint "/movies"
 @app.get('/movies', tags=['movies'])
 def get_movies():
-    return movies
+    return JSONResponse(content=movies)  # usando JSONresponse, para obtener respuestas en formato tipo json
 
 # Filtrando peliculas por parametro
 # Filtrado por ID
@@ -64,21 +64,22 @@ def get_movies():
 def get_movie(id: int = Path(ge=1, le=2000)):  # Val;idacion de parametros 
     for item in movies:
         if item["id"] == id:
-            return item
-    return []
+            return JSONResponse(content=item)
+    return JSONResponse(content=[])
 
 # Filtrando peliculas por categoria
 # Filtrado por parametro Query (no se especifica un ID, en el endpoit)
 @app.get('/movies/', tags=['movies'])
 def get_movies_by_category(category: str = Query(min_length=5, max_length=15)):
-    return [item for item in movies if item['category'] == category]
+    data = [item for item in movies if item['category'] == category]
+    return JSONResponse(content=data)
 
 # Método POST
 # Con Body(), ya no pedira los valores como parametros, sino como un objeto tipo Json.
 @app.post('/movies', tags=['movies'])
 def create_movie(movie: Movie):
-    movies.append(movie)
-    return movies
+    movies.append(movie.dict())
+    return JSONResponse(content={"message": "Se ha registrado la pelicula"})
 
 # usando el metodo Put
 @app.put('/movies/{id}', tags=['movies'])
@@ -90,7 +91,7 @@ def update_movie(id: int ,movie: Movie):
             item['year'] = movie.year
             item['rating'] = movie.rating
             item['category'] = movie.category
-            return movies
+            return JSONResponse(content={"message": "Se ha modificado la pelicula"})
         
 # Usando metodo Delete
 @app.delete('/movies/{id}', tags=['movies'])
@@ -98,5 +99,4 @@ def delete_movie(id: int):
     for item in movies:
         if item["id"] == id:
             movies.remove(item)
-            return movies
-
+            return JSONResponse(content={"message": "Se ha eliminado la pelicula"})
