@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Body, Path, Query
+from fastapi import FastAPI, Body, Path, Query, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, Field  # usado para validar si los objetos de entrada cumple con el formato que espera la API. Field se usa para validaciones
 from typing import Optional, List
@@ -54,35 +54,39 @@ def message():
     return HTMLResponse('<h1>Hello World</h1>')
 
 # Segundo endpoint "/movies"
-@app.get('/movies', tags=['movies'], response_model=List[Movie])
+@app.get('/movies', tags=['movies'], response_model=List[Movie], status_code=200)
 def get_movies() -> List[Movie]:
-    return JSONResponse(content=movies)  # usando JSONresponse, para obtener respuestas en formato tipo json
+    return JSONResponse(content=movies, status_code=200)  # usando JSONresponse, para obtener respuestas en formato tipo json
 
 # Filtrando peliculas por parametro
 # Filtrado por ID
-@app.get('/movies/{id}', tags=['movies'], response_model=Movie)
-def get_movie(id: int = Path(ge=1, le=2000)) -> Movie:  # Val;idacion de parametros 
+@app.get('/movies/{id}', tags=['movies'], response_model=Movie, status_code=200)
+def get_movie(id: int = Path(ge=1, le=2000)) -> Movie:  # Validacion de parametros 
     for item in movies:
         if item["id"] == id:
-            return JSONResponse(content=item)
-    return JSONResponse(content=[])
+            return JSONResponse(content=item, status_code=200)
+    raise HTTPException(status_code=404, detail="Movie not found")
+
 
 # Filtrando peliculas por categoria
 # Filtrado por parametro Query (no se especifica un ID, en el endpoit)
-@app.get('/movies/', tags=['movies'], response_model=List[Movie])
+@app.get('/movies/', tags=['movies'], response_model=List[Movie], status_code=200)
 def get_movies_by_category(category: str = Query(min_length=5, max_length=15)) -> List[Movie]:
     data = [item for item in movies if item['category'] == category]
+    if not data: 
+        raise HTTPException(status_code=404, detail="No movies found in this category")
     return JSONResponse(content=data)
+
 
 # Método POST
 # Con Body(), ya no pedira los valores como parametros, sino como un objeto tipo Json.
-@app.post('/movies', tags=['movies'], response_model=dict)
+@app.post('/movies', tags=['movies'], response_model=dict, status_code=201)
 def create_movie(movie: Movie) -> dict:
     movies.append(movie.dict())
-    return JSONResponse(content={"message": "Se ha registrado la pelicula"})
+    return JSONResponse(content={"message": "Se ha registrado la pelicula"}, status_code=201)
 
 # usando el metodo Put
-@app.put('/movies/{id}', tags=['movies'], response_model=dict)
+@app.put('/movies/{id}', tags=['movies'], response_model=dict, status_code=200)
 def update_movie(id: int ,movie: Movie) -> dict:
     for item in movies:
         if item["id"] == id:
@@ -91,12 +95,14 @@ def update_movie(id: int ,movie: Movie) -> dict:
             item['year'] = movie.year
             item['rating'] = movie.rating
             item['category'] = movie.category
-            return JSONResponse(content={"message": "Se ha modificado la pelicula"})
+            return JSONResponse(content={"message": "Se ha modificado la pelicula"}, status_code=200)
+    raise HTTPException(status_code=404, detail="Movie not found")
         
 # Usando metodo Delete
-@app.delete('/movies/{id}', tags=['movies'], response_model=dict)
+@app.delete('/movies/{id}', tags=['movies'], response_model=dict, status_code=200)
 def delete_movie(id: int) -> dict:
     for item in movies:
         if item["id"] == id:
             movies.remove(item)
-            return JSONResponse(content={"message": "Se ha eliminado la pelicula"})
+            return JSONResponse(content={"message": "Se ha eliminado la pelicula"}, status_code=200)
+    raise HTTPException(status_code=404, detail="Movie not found")
