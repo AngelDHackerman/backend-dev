@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Body
+from fastapi import FastAPI, Body, Path, Query
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel, Field  # usado para validar si los objetos de entrada cumple con el formato que espera la API. Field se usa para validaciones
 from typing import Optional
@@ -10,11 +10,11 @@ app.version = '0.0.1'  # modificando la version de la API
 # Creando el esquema de datos
 class Movie(BaseModel):
     id: Optional[int] = None  # Creando un parametro opcional 
-    title: str = Field(min_length=5 ,max_length=25)
+    title: str = Field(min_length=5 ,max_length=25)  # validacion de datos
     overview: str = Field(min_length=5 ,max_length=55)
     year: int = Field(le=2023)  # le=2023, valor menor o igual a 2023 
-    rating: float
-    category: str
+    rating: float = Field(ge=1, le=10)  # ge=1 igual o mayor a 1, le=10 igual o menor a 10
+    category: str = Field(min_length=5, max_length=15)
 
     # Creando valores "Default" para cada clave/valor de body de la clase movie: 
     class Config: 
@@ -61,7 +61,7 @@ def get_movies():
 # Filtrando peliculas por parametro
 # Filtrado por ID
 @app.get('/movies/{id}', tags=['movies'])
-def get_movie(id: int):
+def get_movie(id: int = Path(ge=1, le=2000)):  # Val;idacion de parametros 
     for item in movies:
         if item["id"] == id:
             return item
@@ -70,7 +70,7 @@ def get_movie(id: int):
 # Filtrando peliculas por categoria
 # Filtrado por parametro Query (no se especifica un ID, en el endpoit)
 @app.get('/movies/', tags=['movies'])
-def get_movies_by_category(category: str, year: int):
+def get_movies_by_category(category: str = Query(min_length=5, max_length=15)):
     return [item for item in movies if item['category'] == category]
 
 # Método POST
