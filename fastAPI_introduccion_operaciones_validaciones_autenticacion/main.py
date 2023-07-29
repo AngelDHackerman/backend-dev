@@ -2,10 +2,16 @@ from fastapi import FastAPI, Body, Path, Query, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, Field  # usado para validar si los objetos de entrada cumple con el formato que espera la API. Field se usa para validaciones
 from typing import Optional, List
+from jwt_manager import create_token
 
 app = FastAPI()
 app.title = 'Mi aplicacion con fastAPI'  # modificando titulo de la app. 
 app.version = '0.0.1'  # modificando la version de la API
+
+# Creando modelo para agregar la informacion de usuario: 
+class User(BaseModel):
+    email: str
+    password: str
 
 # Creando el esquema de datos
 class Movie(BaseModel):
@@ -52,6 +58,11 @@ movies = [
 @app.get('/', tags=['Home'])  # tags=['home'], tag que se muestra en los docs de fastAPI
 def message():
     return HTMLResponse('<h1>Hello World</h1>')
+
+# Endpoit de login
+@app.post('/login', tags=['auth'])
+def login(user: User):
+    return user
 
 # Segundo endpoint "/movies"
 @app.get('/movies', tags=['movies'], response_model=List[Movie], status_code=200)
