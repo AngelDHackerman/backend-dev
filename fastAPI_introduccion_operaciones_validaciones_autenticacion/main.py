@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Body, Path, Query
 from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, Field  # usado para validar si los objetos de entrada cumple con el formato que espera la API. Field se usa para validaciones
-from typing import Optional
+from typing import Optional, List
 
 app = FastAPI()
 app.title = 'Mi aplicacion con fastAPI'  # modificando titulo de la app. 
@@ -54,14 +54,14 @@ def message():
     return HTMLResponse('<h1>Hello World</h1>')
 
 # Segundo endpoint "/movies"
-@app.get('/movies', tags=['movies'])
-def get_movies():
+@app.get('/movies', tags=['movies'], response_model=List[Movie])
+def get_movies() -> List[Movie]:
     return JSONResponse(content=movies)  # usando JSONresponse, para obtener respuestas en formato tipo json
 
 # Filtrando peliculas por parametro
 # Filtrado por ID
-@app.get('/movies/{id}', tags=['movies'])
-def get_movie(id: int = Path(ge=1, le=2000)):  # Val;idacion de parametros 
+@app.get('/movies/{id}', tags=['movies'], response_model=Movie)
+def get_movie(id: int = Path(ge=1, le=2000)) -> Movie:  # Val;idacion de parametros 
     for item in movies:
         if item["id"] == id:
             return JSONResponse(content=item)
@@ -69,21 +69,21 @@ def get_movie(id: int = Path(ge=1, le=2000)):  # Val;idacion de parametros
 
 # Filtrando peliculas por categoria
 # Filtrado por parametro Query (no se especifica un ID, en el endpoit)
-@app.get('/movies/', tags=['movies'])
-def get_movies_by_category(category: str = Query(min_length=5, max_length=15)):
+@app.get('/movies/', tags=['movies'], response_model=List[Movie])
+def get_movies_by_category(category: str = Query(min_length=5, max_length=15)) -> List[Movie]:
     data = [item for item in movies if item['category'] == category]
     return JSONResponse(content=data)
 
 # Método POST
 # Con Body(), ya no pedira los valores como parametros, sino como un objeto tipo Json.
-@app.post('/movies', tags=['movies'])
-def create_movie(movie: Movie):
+@app.post('/movies', tags=['movies'], response_model=dict)
+def create_movie(movie: Movie) -> dict:
     movies.append(movie.dict())
     return JSONResponse(content={"message": "Se ha registrado la pelicula"})
 
 # usando el metodo Put
-@app.put('/movies/{id}', tags=['movies'])
-def update_movie(id: int ,movie: Movie):
+@app.put('/movies/{id}', tags=['movies'], response_model=dict)
+def update_movie(id: int ,movie: Movie) -> dict:
     for item in movies:
         if item["id"] == id:
             item['title'] = movie.title
@@ -94,8 +94,8 @@ def update_movie(id: int ,movie: Movie):
             return JSONResponse(content={"message": "Se ha modificado la pelicula"})
         
 # Usando metodo Delete
-@app.delete('/movies/{id}', tags=['movies'])
-def delete_movie(id: int):
+@app.delete('/movies/{id}', tags=['movies'], response_model=dict)
+def delete_movie(id: int) -> dict:
     for item in movies:
         if item["id"] == id:
             movies.remove(item)
