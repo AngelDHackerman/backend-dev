@@ -2,6 +2,60 @@
 
 Here you'll find the Typescript challanges that Chat-gpt challanged me to resolve, this is with the goal of overcome a near future technical interview. 
 
+<details>
+<summary>How to Install and Use</summary>
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- You have installed the latest version of [Node.js and npm](https://nodejs.org/en/download/).
+- You have installed [TypeScript](https://www.typescriptlang.org/download) globally. You can 
+
+* Install it using npm:
+
+```npm install -g typescript```
+
+* You have installed nodemon globally. Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. 
+Install it using npm:
+
+```npm install -g nodemon```
+
+
+### Using TypeScript Challenges
+To use TypeScript Challenges, follow these steps:
+
+* Clone this repository to your local machine.
+
+```https://github.com/AngelDHackerman/backend-dev.git```
+
+* Navigate to the project directory.
+
+```cd typescript-challenges```
+
+* Install the project dependencies.
+
+```npm install --save-dev typescript```  
+
+* Change the configuration of the tsconfig.json file
+
+```"outDir": "dist",``` This indicate to which folder you want to send the transpile javascript files. 
+
+__(For this steps you can use 2 terminal windows or I recoment to spilt your terminal in half)__
+
+* Run the JavaScript files with nodemon: 
+
+```nodemon dist/<filename>.js```
+
+* If you want to keep the TypeScript compiler running in watch mode, use the following command:
+
+```tsc --watch```
+
+This will automatically compile your TypeScript files to JavaScript whenever they are saved.
+
+</details>
+
+
 ## Basic challanges:
 
 ### Fibonacci Challenge
