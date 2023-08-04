@@ -134,8 +134,82 @@ Your function should not use the `.split()`, `.join()`, or `.reverse()` methods.
 Write a TypeScript function that implements the FizzBuzz game. 
 Your function should take a number `n` as input and print all numbers from 1 to `n`. For multiples of three, print "Fizz" instead of the number, and for multiples of five, print "Buzz". For numbers which are multiples of both three and five, print "FizzBuzz".
 
+- 
+  __Input:__
+  `A number n: 15`
+
+  __Expected Output:__
+
+  ```
+  1
+  2
+  Fizz
+  4
+  Buzz
+  Fizz
+  7
+  8
+  Fizz
+  Buzz
+  11
+  Fizz
+  13
+  14
+  FizzBuzz
+  ```
+
+
 ### Rotated Matrix Challenge
 Write a TypeScript function that takes a 2D matrix (an array of arrays) as input and returns the matrix rotated 90 degrees clockwise.
+
+- 
+  __Input:__
+
+  Una matriz 2D:
+
+  ```
+  [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ]
+  ```
+
+  __Expected Output:__
+
+  La matriz rotada 90 grados en sentido horario:
+
+  ```
+  [
+    [7, 4, 1],
+    [8, 5, 2],
+    [9, 6, 3]
+  ]
+  ```
+
+---
+
+
+## TypeScript Exercises That Uses Custom Types:
+
+### User Type Challenge
+Define a type `User` that has the properties `id` (number), `name` (string), `email` (string), and `isVerified` (boolean). 
+Write a function that takes a `User` object and returns a welcome string that includes the user's name.
+
+- 
+
+  ``` 
+  type User = {
+    id: number;
+    name: string;
+    email: string;
+    isVerified: boolean;
+  };
+
+  function welcomeUser(user: User): string {
+    // your code here
+  }
+  ```
 
 
 ## Asynchronous Typescript
