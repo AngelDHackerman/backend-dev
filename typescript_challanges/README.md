@@ -75,10 +75,10 @@ __Expected Output:__
 `The function should return: true (because 17 is a prime number)`
 
 __Input:__
-A number: 15
+`A number: 15`
 
 __Expected Output:__
-The function should return: false (because 15 is not a prime number)
+`The function should return: false (because 15 is not a prime number)`
 
 </blockquote>
 
@@ -87,11 +87,12 @@ The function should return: false (because 15 is not a prime number)
 Write a TypeScript function that takes an array of strings as input and returns the longest string. 
 If there is more than one string with the maximum length, return the first one you find.
 
-__Input:__
-An array of strings:  ["apple", "banana", "cherry", "date", "elderberry"]
+- 
+  __Input:__
+  `An array of strings:  ["apple", "banana", "cherry", "date", "elderberry"]`
 
-__Expected Output:__
-The longest string in the array:  "elderberry"
+  __Expected Output:__
+  `The longest string in the array:  "elderberry"`
 
 ### Pair Sum Challenge
 Write a TypeScript function that takes an array of numbers and a target value. 
@@ -109,6 +110,7 @@ An array of numbers: [1, 2, 3, 4, 5] and a target value: 11
 
 __Expected Output:__
 The function should return: [] (because there are no two numbers in the array that add up to 11)
+
 
 ### Palindrome Challenge
 Write a TypeScript function that checks if a given word is a palindrome. 
