@@ -66,6 +66,18 @@ The Fibonacci sequence is a series of numbers in which each number is the sum of
 Write a TypeScript function that takes a number `n` as input and returns `true` if the number is prime and `false` if it is not. 
 A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.
 
+__Input:__
+A number: 17
+
+__Expected Output:__
+The function should return: true (because 17 is a prime number)
+
+__Input:__
+A number: 15
+
+__Expected Output:__
+The function should return: false (because 15 is not a prime number)
+
 ### Longest String Challenge
 Write a TypeScript function that takes an array of strings as input and returns the longest string. 
 If there is more than one string with the maximum length, return the first one you find.
@@ -80,6 +92,18 @@ The longest string in the array:  "elderberry"
 Write a TypeScript function that takes an array of numbers and a target value. 
 The function should find two numbers in the array that add up to the target value and return their indices in an array. 
 If there are no two numbers that add up to the target value, the function should return an empty array.
+
+__Input:__
+An array of numbers: [10, 15, 3, 7] and a target value: 17
+
+__Expected Output:__
+The function should return: [0, 3] (because 10 + 7 equals 17 and the indices of 10 and 7 in the array are 0 and 3 respectively)
+
+__Input:__
+An array of numbers: [1, 2, 3, 4, 5] and a target value: 11
+
+__Expected Output:__
+The function should return: [] (because there are no two numbers in the array that add up to 11)
 
 ### Palindrome Challenge
 Write a TypeScript function that checks if a given word is a palindrome. 
