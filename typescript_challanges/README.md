@@ -22,10 +22,13 @@ The function should find two numbers in the array that add up to the target valu
 If there are no two numbers that add up to the target value, the function should return an empty array.
 
 ### Palindrome Challenge
-Write a TypeScript function that checks if a given word is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization. Your function should not use the `.split()`, `.join()`, or `.reverse()` methods.
+Write a TypeScript function that checks if a given word is a palindrome. 
+A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization. 
+Your function should not use the `.split()`, `.join()`, or `.reverse()` methods.
 
 ### FizzBuzz Challenge
-Write a TypeScript function that implements the FizzBuzz game. Your function should take a number `n` as input and print all numbers from 1 to `n`. For multiples of three, print "Fizz" instead of the number, and for multiples of five, print "Buzz". For numbers which are multiples of both three and five, print "FizzBuzz".
+Write a TypeScript function that implements the FizzBuzz game. 
+Your function should take a number `n` as input and print all numbers from 1 to `n`. For multiples of three, print "Fizz" instead of the number, and for multiples of five, print "Buzz". For numbers which are multiples of both three and five, print "FizzBuzz".
 
 ### Rotated Matrix Challenge
 Write a TypeScript function that takes a 2D matrix (an array of arrays) as input and returns the matrix rotated 90 degrees clockwise.
@@ -34,22 +37,29 @@ Write a TypeScript function that takes a 2D matrix (an array of arrays) as input
 ## Asynchronous Typescript
 
 ### Star Wars API Challenge
-The Star Wars API (https://swapi.dev/) is a public API that allows you to fetch information about various Star Wars entities. Write an asynchronous TypeScript function that takes a character ID as input and returns the name of the character and the title of the first film they appeared in. The function should properly handle errors and cases where the character ID does not exist.
+The Star Wars API (https://swapi.dev/) is a public API that allows you to fetch information about various Star Wars entities. 
+Write an asynchronous TypeScript function that takes a character ID as input and returns the name of the character and the title of the first film they appeared in. 
+The function should properly handle errors and cases where the character ID does not exist.
 
 ### Asynchronous Timer Challenge
-Write an asynchronous TypeScript function that implements a timer. The function should take a number `n` as input and wait `n` milliseconds before resolving a promise. The use of JavaScript's `sleep` or `setTimeout` function is not allowed.
+Write an asynchronous TypeScript function that implements a timer. 
+The function should take a number `n` as input and wait `n` milliseconds before resolving a promise. 
+The use of JavaScript's `sleep` or `setTimeout` function is not allowed.
 
 
 ## AWS and Typescript challanges: 
 
 ### AWS S3 Challenge
-Write a TypeScript function that takes a filename and an S3 bucket as input and uploads that file to the S3 bucket. Be sure to handle any errors that might occur during the file upload.
+Write a TypeScript function that takes a filename and an S3 bucket as input and uploads that file to the S3 bucket. 
+Be sure to handle any errors that might occur during the file upload.
 
 ### AWS Lambda Challenge
-Write an AWS Lambda function in TypeScript that triggers whenever a new file is added to an S3 bucket. The Lambda function should take the file and move it to another bucket.
+Write an AWS Lambda function in TypeScript that triggers whenever a new file is added to an S3 bucket. 
+The Lambda function should take the file and move it to another bucket.
 
 ### AWS DynamoDB Challenge
-Write a TypeScript function that takes a user ID as input and retrieves that user's information from a DynamoDB table. The function should properly handle errors and cases where the user ID does not exist in the table.
+Write a TypeScript function that takes a user ID as input and retrieves that user's information from a DynamoDB table. 
+The function should properly handle errors and cases where the user ID does not exist in the table.
 
 ### AWS API Gateway Challenge
 Design and implement a REST API using AWS API Gateway and Lambda. The API should have endpoints to create, read, update, and delete (CRUD) users in a database.
