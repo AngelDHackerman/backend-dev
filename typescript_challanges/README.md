@@ -110,6 +110,18 @@ Write a TypeScript function that checks if a given word is a palindrome.
 A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization. 
 Your function should not use the `.split()`, `.join()`, or `.reverse()` methods.
 
+__Input:__
+A string: "racecar"
+
+__Expected Output:__
+The function should return: true (because "racecar" is a palindrome, it reads the same forward and backward)
+
+__Input:__
+A string: "openai"
+
+__Expected Output:__
+The function should return: false (because "openai" is not a palindrome, it does not read the same forward and backward)
+
 ### FizzBuzz Challenge
 Write a TypeScript function that implements the FizzBuzz game. 
 Your function should take a number `n` as input and print all numbers from 1 to `n`. For multiples of three, print "Fizz" instead of the number, and for multiples of five, print "Buzz". For numbers which are multiples of both three and five, print "FizzBuzz".
@@ -147,3 +159,9 @@ The function should properly handle errors and cases where the user ID does not 
 
 ### AWS API Gateway Challenge
 Design and implement a REST API using AWS API Gateway and Lambda. The API should have endpoints to create, read, update, and delete (CRUD) users in a database.
+
+
+
+---
+
+Made with love 💚 by Angel Hackerman and an AI.
