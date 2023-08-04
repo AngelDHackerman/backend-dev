@@ -165,7 +165,7 @@ Write a TypeScript function that takes a 2D matrix (an array of arrays) as input
 - 
   __Input:__
 
-  Una matriz 2D:
+  A 2D matrix
 
   ```
   [
@@ -177,7 +177,7 @@ Write a TypeScript function that takes a 2D matrix (an array of arrays) as input
 
   __Expected Output:__
 
-  La matriz rotada 90 grados en sentido horario:
+  The matrix rotated 90 degrees clockwise:
 
   ```
   [
@@ -210,6 +210,21 @@ Write a function that takes a `User` object and returns a welcome string that in
     // your code here
   }
   ```
+
+  __Input:__
+
+  ```
+  const user: User = {
+  id: 1,
+  name: "John Doe",
+  email: "john.doe@example.com",
+  isVerified: true,
+  };
+
+  console.log(welcomeUser(user));
+  ```
+
+  __Expected output:__ `"Welcome, John Doe!"`
 
 
 ## Asynchronous Typescript
