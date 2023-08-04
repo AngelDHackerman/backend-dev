@@ -283,7 +283,44 @@ Define a type `Role` that is a union of the strings "ADMIN", "USER", and "GUEST"
 
   __Expected Output:__ `["CREATE", "READ", "UPDATE", "DELETE"]`
 
+### Shape Type Challenge
 
+Define a type `Shape` that is a union of two interfaces: `Circle` and `Rectangle`. `Circle` should have a `radius` (number) and `Rectangle` should have a `width` and a `height` (both numbers). Write a function that takes a `Shape` and returns its area.
+
+- 
+
+  ```
+  interface Circle {
+  radius: number;
+  }
+
+  interface Rectangle {
+    width: number;
+    height: number;
+  }
+
+  type Shape = Circle | Rectangle;
+
+  function area(shape: Shape): number {
+    // your code here
+  }
+  ```
+
+  __Input:__
+
+  ```
+  const circle: Circle = { radius: 5 };
+  const rectangle: Rectangle = { width: 4, height: 6 };
+
+  console.log(area(circle));  // for circle
+  console.log(area(rectangle));  // for rectangle
+  ```
+
+  __Expected Output:__
+  
+  `78.53981633974483` // for circle
+
+  `24` // for rectangle
 
 ---
 
