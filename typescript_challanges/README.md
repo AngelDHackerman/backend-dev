@@ -70,6 +70,12 @@ A prime number is a number greater than 1 that has no positive divisors other th
 Write a TypeScript function that takes an array of strings as input and returns the longest string. 
 If there is more than one string with the maximum length, return the first one you find.
 
+__Input:__
+An array of strings:  ["apple", "banana", "cherry", "date", "elderberry"]
+
+__Expected Output:__
+The longest string in the array:  "elderberry"
+
 ### Pair Sum Challenge
 Write a TypeScript function that takes an array of numbers and a target value. 
 The function should find two numbers in the array that add up to the target value and return their indices in an array. 
