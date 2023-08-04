@@ -66,10 +66,10 @@ The Fibonacci sequence is a series of numbers in which each number is the sum of
 Write a TypeScript function that takes a number `n` as input and returns `true` if the number is prime and `false` if it is not. 
 A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.
 
-__Input:__
+    __Input:__
 A number: 17
 
-__Expected Output:__
+  __Expected Output:__
 The function should return: true (because 17 is a prime number)
 
 __Input:__
