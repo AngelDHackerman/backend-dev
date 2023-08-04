@@ -41,7 +41,7 @@ To use TypeScript Challenges, follow these steps:
 
 ```"outDir": "dist",``` This indicate to which folder you want to send the transpile javascript files. 
 
-__(For this steps you can use 2 terminal windows or I recoment to spilt your terminal in half)__
+__(For this steps you can use 2 terminal tabs or as I recoment to you, spilt your terminal in half)__
 
 * Run the JavaScript files with nodemon: 
 
