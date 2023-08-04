@@ -259,6 +259,34 @@ Define a type `Product` that has the properties `id` (number), `name` (string), 
 
   __Expected Output:__ `{ id: 3, name: "Product 3", description: "This is product 3", price: 30 }`
 
+### Role Type Challenge
+
+Define a type `Role` that is a union of the strings "ADMIN", "USER", and "GUEST". Write a function that takes a `Role` and returns the allowed actions for that role.
+
+- 
+
+ ```
+ type Role = "ADMIN" | "USER" | "GUEST";
+
+  function allowedActions(role: Role): string[] {
+    // your code here
+  }
+ ```
+
+  __Input:__
+
+  ```
+  const role: Role = "ADMIN";
+
+  console.log(allowedActions(role));
+  ```
+
+  __Expected Output:__ `["CREATE", "READ", "UPDATE", "DELETE"]`
+
+
+
+---
+
 ## Asynchronous Typescript
 
 ### Star Wars API Challenge
@@ -271,6 +299,8 @@ Write an asynchronous TypeScript function that implements a timer.
 The function should take a number `n` as input and wait `n` milliseconds before resolving a promise. 
 The use of JavaScript's `sleep` or `setTimeout` function is not allowed.
 
+
+--- 
 
 ## AWS and Typescript challanges: 
 
