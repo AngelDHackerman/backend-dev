@@ -60,28 +60,27 @@ This will automatically compile your TypeScript files to JavaScript whenever the
 
 ### Fibonacci Challenge
 Write a TypeScript function that takes a number `n` as input and returns the `n`th number in the Fibonacci sequence. 
-The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones. For example, the sequence starts 0, 1, 1, 2, 3, 5, 8, 13, ...
+The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones. 
+
+- 
+  `For example, the sequence starts 0, 1, 1, 2, 3, 5, 8, 13, ...`
 
 ### Prime Numbers Challenge
 Write a TypeScript function that takes a number `n` as input and returns `true` if the number is prime and `false` if it is not. 
 A prime number is a number greater than 1 that has no positive divisors other than 1 and itself.
 
-<blockquote>
+- 
+  __Input:__
+  `A number: 17`
 
-__Input:__
-`A number: 17`
+  __Expected Output:__
+  `The function should return: true (because 17 is a prime number)`
 
-__Expected Output:__
-`The function should return: true (because 17 is a prime number)`
+  __Input:__
+  `A number: 15`
 
-__Input:__
-`A number: 15`
-
-__Expected Output:__
-`The function should return: false (because 15 is not a prime number)`
-
-</blockquote>
-
+  __Expected Output:__
+  `The function should return: false (because 15 is not a prime number)`
 
 ### Longest String Challenge
 Write a TypeScript function that takes an array of strings as input and returns the longest string. 
@@ -99,17 +98,18 @@ Write a TypeScript function that takes an array of numbers and a target value.
 The function should find two numbers in the array that add up to the target value and return their indices in an array. 
 If there are no two numbers that add up to the target value, the function should return an empty array.
 
-__Input:__
-An array of numbers: [10, 15, 3, 7] and a target value: 17
+- 
+  __Input:__
+  `An array of numbers: [10, 15, 3, 7] and a target value: 17`
 
-__Expected Output:__
-The function should return: [0, 3] (because 10 + 7 equals 17 and the indices of 10 and 7 in the array are 0 and 3 respectively)
+  __Expected Output:__
+  `The function should return: [0, 3] (because 10 + 7 equals 17 and the indices of 10 and 7 in the array are 0 and 3 respectively)`
 
-__Input:__
-An array of numbers: [1, 2, 3, 4, 5] and a target value: 11
+  __Input:__
+  `An array of numbers: [1, 2, 3, 4, 5] and a target value: 11`
 
-__Expected Output:__
-The function should return: [] (because there are no two numbers in the array that add up to 11)
+  __Expected Output:__
+  `The function should return: [] (because there are no two numbers in the array that add up to 11)`
 
 
 ### Palindrome Challenge
@@ -117,17 +117,18 @@ Write a TypeScript function that checks if a given word is a palindrome.
 A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization. 
 Your function should not use the `.split()`, `.join()`, or `.reverse()` methods.
 
-__Input:__
-A string: "racecar"
+- 
+  __Input:__
+  `A string: "racecar"`
 
-__Expected Output:__
-The function should return: true (because "racecar" is a palindrome, it reads the same forward and backward)
+  __Expected Output:__
+  `The function should return: true (because "racecar" is a palindrome, it reads the same forward and backward)`
 
-__Input:__
-A string: "openai"
+  __Input:__
+  `A string: "openai"`
 
-__Expected Output:__
-The function should return: false (because "openai" is not a palindrome, it does not read the same forward and backward)
+  __Expected Output:__
+  `The function should return: false (because "openai" is not a palindrome, it does not read the same forward and backward)`
 
 ### FizzBuzz Challenge
 Write a TypeScript function that implements the FizzBuzz game. 
