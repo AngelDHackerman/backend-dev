@@ -63,6 +63,18 @@ Write a TypeScript function that takes a number `n` as input and returns the `n`
 The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones. 
 
 - 
+  __Input:__
+  `A number representing the position in the Fibonacci sequence: 7`
+
+  __Expected Output:__
+  `The number at the 7th position in the Fibonacci sequence: 13`
+
+  __Explanation:__
+  `The Fibonacci sequence starts as follows: 0, 1, 1, 2, 3, 5, 8, 13, ...`
+  `So, the number at the 7th position is 13.`
+
+
+- 
   `For example, the sequence starts 0, 1, 1, 2, 3, 5, 8, 13, ...`
 
 ### Prime Numbers Challenge
