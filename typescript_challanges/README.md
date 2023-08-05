@@ -61,21 +61,18 @@ This will automatically compile your TypeScript files to JavaScript whenever the
 ### Fibonacci Challenge
 Write a TypeScript function that takes a number `n` as input and returns the `n`th number in the Fibonacci sequence. 
 The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones. 
+The Fibonacci sequence starts as follows: 0, 1, 1, 2, 3, 5, 8, 13, ...
 
 - 
   __Input:__
   `A number representing the position in the Fibonacci sequence: 7`
 
   __Expected Output:__
-  `The number at the 7th position in the Fibonacci sequence: 13`
+  `The number at the 7th position in the Fibonacci sequence is: 13`
 
   __Explanation:__
-  `The Fibonacci sequence starts as follows: 0, 1, 1, 2, 3, 5, 8, 13, ...`
   `So, the number at the 7th position is 13.`
 
-
-- 
-  `For example, the sequence starts 0, 1, 1, 2, 3, 5, 8, 13, ...`
 
 ### Prime Numbers Challenge
 Write a TypeScript function that takes a number `n` as input and returns `true` if the number is prime and `false` if it is not. 
