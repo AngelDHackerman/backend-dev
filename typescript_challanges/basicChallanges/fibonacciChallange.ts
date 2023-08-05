@@ -2,7 +2,7 @@
 
 // Write a TypeScript function that takes a number `n` as input and returns the `n`th number in the Fibonacci sequence. 
 // The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones. 
-// For example, the sequence starts 0, 1, 1, 2, 3, 5, 8, 13, ...
+// For example, the sequence starts 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 
 // Input: A number representing the position in the Fibonacci sequence: 7
 // Expected Output: The number at the 7th position in the Fibonacci sequence is: 13
@@ -27,7 +27,8 @@ const fibonacci = (n: FibonacciNumber): FibonacciNumber => {
   return curr;
 }
 
-// execution: 
 
-const result = fibonacci(4);
-console.log(result)
+// Execution: 
+
+const result = fibonacci(7);
+console.log(result);

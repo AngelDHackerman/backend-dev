@@ -62,7 +62,7 @@ This will automatically compile your TypeScript files to JavaScript whenever the
 Write a TypeScript function that takes a number `n` as input and returns the `n`th number in the Fibonacci sequence. 
 The Fibonacci sequence is a series of numbers in which each number is the sum of the two preceding ones. 
 
-The Fibonacci sequence starts as follows: 0, 1, 1, 2, 3, 5, 8, 13, ...
+The Fibonacci sequence starts as follows: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
 
 - 
   __Input:__
@@ -91,6 +91,7 @@ A prime number is a number greater than 1 that has no positive divisors other th
 
   __Expected Output:__
   `The function should return: false (because 15 is not a prime number)`
+  `15 is not a prime number because it is divisible by 1, 3, 5, and 15.`
 
 ### Longest String Challenge
 Write a TypeScript function that takes an array of strings as input and returns the longest string. 
