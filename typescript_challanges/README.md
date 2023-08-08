@@ -2,8 +2,19 @@
 
 Here you'll find the Typescript challanges that Chat-gpt challanged me to resolve, this is with the goal of overcome a near future technical interview. 
 
+## TypeScript Coding Challenges
+
+- [Basic challanges](#basic-challanges)
+- [TypeScript With Custom Types](#typescript-with-custom-types)
+- [TypeScript Using Interfaces](#typescript-using-interfaces)
+- [Asynchronous Typescript](#asynchronous-typescript)
+- [AWS and Typescript challanges](#aws-and-typescript-challanges)
+
 <details>
 <summary>How to Install and Use</summary>
+
+
+
 
 ## Prerequisites
 
