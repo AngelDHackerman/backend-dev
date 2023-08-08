@@ -177,7 +177,8 @@ Your function should take a number `n` as input and print all numbers from 1 to 
 
 ### User Type Challenge
 Define a type `User` that has the properties `id` (number), `name` (string), `email` (string), and `isVerified` (boolean). 
-Write a function that takes a `User` object and returns a welcome string that includes the user's name.
+Write a function that takes a User object and returns a welcome string that includes the user's name, id, email, and if it is verfied.
+
 
 - 
 
@@ -207,7 +208,7 @@ Write a function that takes a `User` object and returns a welcome string that in
   console.log(welcomeUser(user));
   ```
 
-  __Expected output:__ `"Welcome, John Doe!"`
+  __Expected output:__ `"Expected output: "Welcome, John Doe! Your ID is: XX and your email: XXXX and you are/are not verified.""`
 
 ### Product Type Challenge
 
