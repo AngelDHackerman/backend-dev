@@ -286,7 +286,7 @@ GUEST: ["READ"]
 
 Define a TypeScript interface named `UserProfile` that represents a user's profile. 
 The profile should have the following properties: `id` (number), `username` (string), `email` (string), and `dateOfBirth` (optional string). 
-Write a function that takes an object of type `UserProfile` and returns the user's age if the `dateOfBirth` is provided.
+Write a function that takes an object of type `UserProfile` and returns the user's name and email. And age if the `dateOfBirth` is provided.
 
 __Input:__
 
