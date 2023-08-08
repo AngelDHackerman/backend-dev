@@ -215,10 +215,7 @@ Define a type `Product` that has the properties `id` (number), `name` (string), 
 
   ```
   type Product = {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
+    <!-- your time product here -->
   };
 
   function mostExpensiveProduct(products: Product[]): Product {
@@ -382,6 +379,12 @@ __Input / Output:__
 `Output: File with the text "HELLO WORLD"`
 
 
+
+
+// proyecto de CDK
+// constructs de DynamoDB y lamdba
+
+// lambda que acepte una peticion de API getway simulando un evento de API getway, 
 
 ---
 
