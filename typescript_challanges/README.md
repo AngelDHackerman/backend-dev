@@ -250,7 +250,7 @@ GUEST: ["READ"]
  ```
  type Role = "ADMIN" | "USER" | "GUEST";
 
-  function allowedActions(): {
+  function allowedActions(// ): // {
     // your code here
   }
  ```
