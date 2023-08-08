@@ -13,19 +13,31 @@ type User = {
 };
 
 function welcomeUser(user: User): string {
-  return `Welcome, `
+  if (user.isVerified) { 
+    return `Welcome, ${user.name}! Your ID is ${user.id} and your email is: ${user.email} and you are verified!`
+  }
+  return `Welcome, ${user.name}! Your ID is ${user.id} and your email is: ${user.email} and you are NOT verified, please verify your account`
 }
 
-// Input: 
+// Input 1: 
 
-const user: User = {
+const userTest: User = {
   id: 1,
   name: "John Doe",
   email: "john.doe@example.com",
   isVerified: true,
   };
-  
-
 
 // Expected output: "Welcome, John Doe! Your ID is: XX and your email: XXXX and you are/are not verified."
-console.log(welcomeUser(user));
+console.log(welcomeUser(userTest));
+
+// Input 2:
+
+const userAngel: User = { 
+  id: 2,
+  name: 'Angel Hackerman',
+  email: 'AngelHackerman@mail.com',
+  isVerified: false
+}
+
+console.log(welcomeUser(userAngel))

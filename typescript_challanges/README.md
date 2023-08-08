@@ -184,10 +184,7 @@ Write a function that takes a User object and returns a welcome string that incl
 
   ``` 
   type User = {
-    id: number;
-    name: string;
-    email: string;
-    isVerified: boolean;
+    <!-- Put the key:values here -->
   };
 
   function welcomeUser(user: User): string {
