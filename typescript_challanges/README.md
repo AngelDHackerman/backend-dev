@@ -170,34 +170,6 @@ Your function should take a number `n` as input and print all numbers from 1 to 
   ```
 
 
-### Rotated Matrix Challenge
-Write a TypeScript function that takes a 2D matrix (an array of arrays) as input and returns the matrix rotated 90 degrees clockwise.
-
-- 
-  __Input:__
-
-  A 2D matrix
-
-  ```
-  [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-  ]
-  ```
-
-  __Expected Output:__
-
-  The matrix rotated 90 degrees clockwise:
-
-  ```
-  [
-    [7, 4, 1],
-    [8, 5, 2],
-    [9, 6, 3]
-  ]
-  ```
-
 ---
 
 
