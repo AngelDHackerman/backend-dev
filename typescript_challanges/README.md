@@ -173,7 +173,7 @@ Your function should take a number `n` as input and print all numbers from 1 to 
 ---
 
 
-## TypeScript Exercises That Uses Custom Types:
+## TypeScript With Custom Types:
 
 ### User Type Challenge
 Define a type `User` that has the properties `id` (number), `name` (string), `email` (string), and `isVerified` (boolean). 
@@ -242,7 +242,9 @@ Define a type `Product` that has the properties `id` (number), `name` (string), 
 Define a type `Role` that is a union of the strings "ADMIN", "USER", and "GUEST". Write a function that takes a `Role` and returns the allowed actions for that role.
 
 ADMIN: ["CREATE", "READ", "UPDATE", "DELETE"]
+
 USER: ["READ", "CREATE"]
+
 GUEST: ["READ"]
 
 - 
@@ -265,44 +267,56 @@ GUEST: ["READ"]
 
   __Expected Output:__ `["CREATE", "READ", "UPDATE", "DELETE"]`
 
-### Shape Type Challenge
+---
 
-Define a type `Shape` that is a union of two interfaces: `Circle` and `Rectangle`. `Circle` should have a `radius` (number) and `Rectangle` should have a `width` and a `height` (both numbers). Write a function that takes a `Shape` and returns its area.
+## TypeScript Using Interfaces
+
+### User Profile Interface
+
+Define a TypeScript interface named `UserProfile` that represents a user's profile. 
+The profile should have the following properties: `id` (number), `username` (string), `email` (string), and `dateOfBirth` (optional string). 
+Write a function that takes an object of type `UserProfile` and returns the user's age if the `dateOfBirth` is provided.
+
+__Input:__
 
 - 
 
   ```
-  interface Circle {
-  radius: number;
-  }
-
-  interface Rectangle {
-    width: number;
-    height: number;
-  }
-
-  type Shape = Circle | Rectangle;
-
-  function area(shape: Shape): number {
-    // your code here
-  }
+  const user: UserProfile = {
+    id: 1,
+    username: "johnDoe",
+    email: "john@example.com",
+    dateOfBirth: "1990-01-01"
+  };
   ```
 
-  __Input:__
+  __Expected Output:__ `33 // Assuming the current year is 2023`
+
+
+###  Shape Area Calculator
+
+Define two interfaces: `Circle` and `Rectangle`. 
+The `Circle` should have a property `radius` (number) and the `Rectangle` should have properties `width` (number) and `height` (number). 
+Write a function that calculates the area of a given shape.
+
+__Input:__
+
+- 
 
   ```
-  const circle: Circle = { radius: 5 };
-  const rectangle: Rectangle = { width: 4, height: 6 };
+  const shape1: Circle = {
+  radius: 5
+  };
 
-  console.log(area(circle));  // for circle
-  console.log(area(rectangle));  // for rectangle
+  const shape2: Rectangle = {
+    width: 10,
+    height: 5
+  };
   ```
 
   __Expected Output:__
-  
-  `78.53981633974483` // for circle
-
-  `24` // for rectangle
+  `78.54 // For shape1 (Circle with radius 5)`
+  `50   // For shape2 (Rectangle with width 10 and height 5)`
 
 ---
 
