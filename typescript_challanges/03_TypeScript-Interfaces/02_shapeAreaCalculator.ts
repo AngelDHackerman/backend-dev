@@ -14,7 +14,12 @@ interface Rectangle {
 }
 
 // Type Guard for cicle 
+
+// 'shape is Circle' is a Type Guard. If the function returns true, it ensures 'shape' is of type 'Circle'. 
+// If false, 'shape' is not a 'Circle' (and in this context, would be a 'Rectangle').
 const isCircle = (shape: Circle | Rectangle): shape is Circle => { 
+  // Using type assertion '(shape as Circle).radius' to treat 'shape' as type 'Circle' and access its 'radius' property.
+  // If 'shape' was actually of type 'Rectangle', this property would be 'undefined'.
   return (shape as Circle).radius !== undefined;
 }
 
