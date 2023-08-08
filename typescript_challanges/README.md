@@ -318,6 +318,80 @@ __Input:__
   `78.54 // For shape1 (Circle with radius 5)`
   `50   // For shape2 (Rectangle with width 10 and height 5)`
 
+### Todo List Interface
+
+Define an interface named `Todo` that represents a todo item. 
+The todo should have the following properties: `id` (number), `task` (string), and `completed` (boolean). 
+Write a function that filters out completed tasks from an array of todos.
+
+- 
+
+  __Input:__
+
+  ```
+  const todos: Todo[] = [
+  { id: 1, task: "Do laundry", completed: false },
+  { id: 2, task: "Buy groceries", completed: true },
+  { id: 3, task: "Clean room", completed: false }
+  ];
+  ```
+
+  __Expected Output:__ 
+
+  ```
+  [
+  { id: 1, task: "Do laundry", completed: false },
+  { id: 3, task: "Clean room", completed: false }
+  ]
+  ```
+
+
+### Vehicle Interface
+
+Define an interface named `Vehicle` that represents a vehicle. 
+The vehicle should have properties `brand` (string), `year` (number), and `isElectric` (boolean). 
+Write a function that returns the age of the vehicle.
+
+- 
+
+  __Input:__
+
+  ```
+  const car: Vehicle = {
+  brand: "Toyota",
+  year: 2015,
+  isElectric: false
+  };
+  ```
+
+  __Expected Output:__ `8 // Assuming the current year is 2023`
+
+
+### Book Interface
+
+Define an interface named `Book` that represents a book. 
+The book should have properties `title` (string), `author` (string), `publishedYear` (number), and `genres` (array of strings). 
+Write a function that checks if a given book belongs to a specific genre.
+
+- 
+
+  __Input:__
+
+  ```
+  const myBook: Book = {
+  title: "The Great Gatsby",
+  author: "F. Scott Fitzgerald",
+  publishedYear: 1925,
+  genres: ["Novel", "Historical"]
+  };
+  ```
+
+  __Expected Output:__  
+
+  `true  // If checking for "Novel"`
+  `false // If checking for "Science Fiction"`
+
+
 ---
 
 ## Asynchronous Typescript
