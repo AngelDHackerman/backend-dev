@@ -241,6 +241,10 @@ Define a type `Product` that has the properties `id` (number), `name` (string), 
 
 Define a type `Role` that is a union of the strings "ADMIN", "USER", and "GUEST". Write a function that takes a `Role` and returns the allowed actions for that role.
 
+ADMIN: ["CREATE", "READ", "UPDATE", "DELETE"]
+USER: ["READ", "CREATE"]
+GUEST: ["READ"]
+
 - 
 
  ```
