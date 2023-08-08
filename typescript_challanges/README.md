@@ -246,7 +246,7 @@ Define a type `Role` that is a union of the strings "ADMIN", "USER", and "GUEST"
  ```
  type Role = "ADMIN" | "USER" | "GUEST";
 
-  function allowedActions(role: Role): string[] {
+  function allowedActions(): {
     // your code here
   }
  ```
