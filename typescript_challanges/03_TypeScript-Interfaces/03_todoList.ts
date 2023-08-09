@@ -1,6 +1,6 @@
-// Define an interface named Todo that represents a todo item. 
-// The todo should have the following properties: id (number), task (string), and completed (boolean). 
-// Write a function that filters out completed tasks from an array of todos.
+// Define an interface named Todo that represents a todo item. -> ok
+// The todo should have the following properties: id (number), task (string), and completed (boolean).  -> ok
+// Write a function that filters out completed tasks from an array of todos. -> ok
 
 interface Todo { 
   id: number,
