@@ -407,10 +407,20 @@ Write a function that checks if a given book belongs to a specific genre.
 
 ## Asynchronous Typescript
 
-### Star Wars API Challenge
-The Star Wars API (https://swapi.dev/) is a public API that allows you to fetch information about various Star Wars entities. 
-Write an asynchronous TypeScript function that takes a character ID as input and returns the name of the character and the title of the first film they appeared in. 
-The function should properly handle errors and cases where the character ID does not exist.
+### Jikan Anime & Manga API Challenge
+The Jikan API (https://jikan.moe/) is a public API that allows you to fetch information about various anime and manga.
+Write an asynchronous TypeScript function that takes an anime ID as input and returns the title of the anime and the synopsis.
+The function should properly handle errors and cases where the anime ID does not exist.
+
+__Example of what the API should return:__
+
+- 
+  ```
+  {
+  "title": "Naruto",
+  "synopsis": "Naruto Uzumaki, a hyperactive and knuckle-headed ninja, lives in Konohagakure, the Hidden Leaf village. He wants to become the Hokage, the village leader, in order to gain recognition from everyone around him."
+  }
+  ```
 
 ### Asynchronous Timer Challenge
 Write an asynchronous TypeScript function that implements a timer. 
