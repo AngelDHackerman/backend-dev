@@ -427,6 +427,24 @@ Write an asynchronous TypeScript function that implements a timer.
 The function should take a number `n` as input and wait `n` milliseconds before resolving a promise. 
 The use of JavaScript's `sleep` or `setTimeout` function is not allowed.
 
+__Input:__
+
+- 
+
+  ```
+  const n = 1000; // 1000 milliseconds, or 1 second
+
+  asyncTimer(n).then(() => {
+    console.log('Timer has finished!');
+  });
+  ```
+
+
+__Expected Output:__
+
+- 
+
+  `Timer has finished!`
 
 --- 
 
