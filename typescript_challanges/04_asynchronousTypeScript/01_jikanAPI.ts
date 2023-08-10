@@ -6,20 +6,27 @@ import fetch from 'node-fetch';
 
 const getAnimeInfo =async (animeID: number) => {
   try {
-    const response = await fetch(`https://api.jikan.moe/v3/anime/${animeID}`)
-
+    const response = await fetch(`https://api.jikan.moe/v4/anime/${animeID}`)
     // Verify if the answer is correct
     if (!response.ok) { 
       throw new Error('Anime ID not found!')
     }
 
-    const data = await response.json()  // convert the response in json format
+    const result = await response.json()
+    const data = result.data  // From the API we received an object called "data" which contains all the information needed.
 
     return { 
       title: data.title,
       synopsys: data.synopsis
     }
   } catch (error) {
-    
+    console.error(error); 
+    throw new Error('Failed to fetch anime')
   }
 }
+
+// Getting the information for the API: 
+
+getAnimeInfo(5)
+  .then(anime => console.log(anime))
+  .catch(error => console.error(error))
