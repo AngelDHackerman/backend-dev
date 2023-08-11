@@ -7,7 +7,7 @@ const hello = async (event, context) => {
 
     return {
         "statusCode": 200,
-        "body": JSON.stringify({ 'message': `Hora: ${hour}:${minute}:${seconds}`})
+        "body": JSON.stringify({ 'message': `Hora: ${hour}:${minute}:${seconds} actual`})
     }
 }
 
