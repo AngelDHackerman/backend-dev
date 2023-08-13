@@ -475,26 +475,34 @@ __Input / Output:__
 
 `Output: Log entry with details of the new record`
 
-Lambda: Batch Processing with DynamoDB
-Description:
+### Lambda: Batch Processing with DynamoDB
+
+__Description:__
+
 Write a Lambda function in TypeScript that processes multiple records in a DynamoDB table. The function should retrieve all records where the message contains a specific keyword and return them.
 
-Input / Output:
-Input: { "keyword": "Hello" }
-Output: Array of records containing the keyword "Hello"
+__Input / Output:__
 
-TypeScript: AWS SDK Usage
-Description:
+`Input: { "keyword": "Hello" }`
+`Output: Array of records containing the keyword "Hello"`
+
+### TypeScript: AWS SDK Usage
+
+__Description:__
+
 Define a TypeScript function that uses the AWS SDK to list all the tables in your DynamoDB. Make sure to handle any potential errors and return a clear message to the user.
 
-Input / Output:
-Input: None
-Output: Array of table names or error message
+__Input / Output:__
 
-Lambda: EventBridge Logging
-Description:
+`Input: None`
+`Output: Array of table names or error message`
+
+### Lambda: EventBridge Logging
+
+__Description:__
 Create a Lambda function in TypeScript that listens to all events from EventBridge. Whenever an event is received, the function should log the event source and detail.
 
-Input / Output:
-Input: Event from EventBridge
-Output: Log entry with event source and detail
+__Input / Output:__
+
+`Input: Event from EventBridge`
+`Output: Log entry with event source and detail`
