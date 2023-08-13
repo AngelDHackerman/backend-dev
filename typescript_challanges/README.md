@@ -475,7 +475,7 @@ __Input / Output:__
 
 `Output: Log entry with details of the new record`
 
-### Lambda: Batch Processing with DynamoDB
+### 3. Lambda: Batch Processing with DynamoDB
 
 __Description:__
 
@@ -486,7 +486,7 @@ __Input / Output:__
 `Input: { "keyword": "Hello" }`
 `Output: Array of records containing the keyword "Hello"`
 
-### TypeScript: AWS SDK Usage
+### 4. TypeScript: AWS SDK Usage
 
 __Description:__
 
@@ -497,7 +497,7 @@ __Input / Output:__
 `Input: None`
 `Output: Array of table names or error message`
 
-### Lambda: EventBridge Logging
+### 5. Lambda: EventBridge Logging
 
 __Description:__
 Create a Lambda function in TypeScript that listens to all events from EventBridge. Whenever an event is received, the function should log the event source and detail.
