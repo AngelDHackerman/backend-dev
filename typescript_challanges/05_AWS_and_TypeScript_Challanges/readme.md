@@ -37,3 +37,6 @@ Install the necessary dependencies for Lambda and DynamoDB:
 
 `npm install @aws-cdk/aws-lambda @aws-cdk/aws-dynamodb`
 
+Install the type definitions for Lambda and DynamoDB: 
+
+`npm install --save-dev @types/aws-sdk @types/aws-lambda`
