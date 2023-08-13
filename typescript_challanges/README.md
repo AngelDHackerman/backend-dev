@@ -450,21 +450,30 @@ __Expected Output:__
 
 ## AWS and Typescript challanges: 
 
-Lambda: DynamoDB Data Retrieval
-Description:
+### 1. Lambda: DynamoDB Data Retrieval
+
+__Description:__
+
 Write a Lambda function in TypeScript that retrieves a record from a DynamoDB table using a given ID.
 
-Input / Output:
-Input: { "id": "xyz123" }
-Output: { "name": "Alice", "message": "Hello from Alice!" }
+__Input / Output:__
 
-EventBridge: Trigger Lambda on Event
-Description:
+`Input: { "id": "xyz123" }`
+
+`Output: { "name": "Alice", "message": "Hello from Alice!" }`
+
+
+### 2. EventBridge: Trigger Lambda on Event
+
+__Description:__
+
 Create an EventBridge rule that triggers a Lambda function (written in TypeScript) whenever a new record is inserted into a DynamoDB table. The Lambda function should log the details of the new record.
 
-Input / Output:
-Input: New record inserted into DynamoDB
-Output: Log entry with details of the new record
+__Input / Output:__
+
+`Input: New record inserted into DynamoDB`
+
+`Output: Log entry with details of the new record`
 
 Lambda: Batch Processing with DynamoDB
 Description:
