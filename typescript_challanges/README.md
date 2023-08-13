@@ -484,6 +484,7 @@ Write a Lambda function in TypeScript that processes multiple records in a Dynam
 __Input / Output:__
 
 `Input: { "keyword": "Hello" }`
+
 `Output: Array of records containing the keyword "Hello"`
 
 ### 4. TypeScript: AWS SDK Usage
@@ -495,6 +496,7 @@ Define a TypeScript function that uses the AWS SDK to list all the tables in you
 __Input / Output:__
 
 `Input: None`
+
 `Output: Array of table names or error message`
 
 ### 5. Lambda: EventBridge Logging
@@ -505,4 +507,5 @@ Create a Lambda function in TypeScript that listens to all events from EventBrid
 __Input / Output:__
 
 `Input: Event from EventBridge`
+
 `Output: Log entry with event source and detail`
