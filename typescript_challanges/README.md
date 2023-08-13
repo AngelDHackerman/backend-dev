@@ -450,73 +450,42 @@ __Expected Output:__
 
 ## AWS and Typescript challanges: 
 
-### Simple AWS Lambda Function with SNS Notification
+Lambda: DynamoDB Data Retrieval
+Description:
+Write a Lambda function in TypeScript that retrieves a record from a DynamoDB table using a given ID.
 
-__Description:__
+Input / Output:
+Input: { "id": "xyz123" }
+Output: { "name": "Alice", "message": "Hello from Alice!" }
 
-Create a Lambda function in TypeScript that, given a message, publishes it to a specific SNS topic.
+EventBridge: Trigger Lambda on Event
+Description:
+Create an EventBridge rule that triggers a Lambda function (written in TypeScript) whenever a new record is inserted into a DynamoDB table. The Lambda function should log the details of the new record.
 
-__Input / Output:__
+Input / Output:
+Input: New record inserted into DynamoDB
+Output: Log entry with details of the new record
 
-`Input: { "message": "This is a test message for SNS." }`
-`Output: { "status": "Message published successfully." }`
+Lambda: Batch Processing with DynamoDB
+Description:
+Write a Lambda function in TypeScript that processes multiple records in a DynamoDB table. The function should retrieve all records where the message contains a specific keyword and return them.
 
+Input / Output:
+Input: { "keyword": "Hello" }
+Output: Array of records containing the keyword "Hello"
 
-### DynamoDB: Data Insertion
+TypeScript: AWS SDK Usage
+Description:
+Define a TypeScript function that uses the AWS SDK to list all the tables in your DynamoDB. Make sure to handle any potential errors and return a clear message to the user.
 
-__Description:__
+Input / Output:
+Input: None
+Output: Array of table names or error message
 
-Write a Lambda function in TypeScript that inserts a new record into a DynamoDB table. The record should contain a unique ID, a name, and a message.
+Lambda: EventBridge Logging
+Description:
+Create a Lambda function in TypeScript that listens to all events from EventBridge. Whenever an event is received, the function should log the event source and detail.
 
-__Input / Output:__
-
-`Input: { "name": "Alice", "message": "Hello from Alice!" }`
-`Output: { "status": "Data inserted successfully.", "recordId": "xyz123" }`
-
-
-### API Gateway: Integration with External API
-
-__Description:__
-
-Using API Gateway and Lambda, create an endpoint that, when called, makes a request to an external API (e.g., a weather API) and returns the results.
-
-__Input / Output:__
-
-`Endpoint: /getWeather?city=London`
-`Output: { "city": "London", "temperature": "20°C", "condition": "Cloudy" }`
-
-
-### AWS Step Functions Challenge
-
-__Description:__
-
-Create a state machine in AWS Step Functions that coordinates multiple Lambda functions. For instance, one function could generate a random number, and the next function determines if that number is even or odd.
-
-__Input / Output:__
-
-`Input: { "start": true }`
-`Output: { "number": 5, "type": "odd" }`
-
-
-### AWS Lambda & S3: File Transformation
-
-__Description:__
-
-Write a Lambda function in TypeScript that triggers when a text file (.txt) is uploaded to an S3 bucket. The function should transform the content of the file (e.g., converting all letters to uppercase) and save the transformed file in another bucket.
-
-__Input / Output:__
-
-`Input: File with the text "hello world"`
-`Output: File with the text "HELLO WORLD"`
-
-
-
-
-// proyecto de CDK
-// constructs de DynamoDB y lamdba
-
-// lambda que acepte una peticion de API getway simulando un evento de API getway, 
-
----
-
-Made with love 💚 by Angel Hackerman and an AI.
+Input / Output:
+Input: Event from EventBridge
+Output: Log entry with event source and detail
