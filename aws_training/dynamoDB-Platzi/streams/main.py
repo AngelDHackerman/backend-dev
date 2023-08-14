@@ -1,3 +1,5 @@
+# Creating the Lambda Funcion: 
+
 # Create the role using the command:
 # aws iam create-role --role-name dynamodbStreamsRole --assume-role-policy-document file://role.json
 # ARN Number: arn:aws:iam::062715921555:role/dynamodbStreamsRole
