@@ -27,3 +27,7 @@ Option 1, the long command:
 Option 2, using the wizard (much easier): 
 
 `aws dynamodb wizard new-table`
+
+__Deleting a table from CLI:__
+
+`aws dynamodb delete-table --table-name table_name_here`
