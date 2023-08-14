@@ -31,3 +31,10 @@ Option 2, using the wizard (much easier):
 __Deleting a table from CLI:__
 
 `aws dynamodb delete-table --table-name table_name_here`
+
+
+## Create a Lambda Function: 
+
+Execute the command: 
+
+`aws lambda create-function --function-name lambda-export --role arn:aws:iam::name_of_arn_account --runtime python3.7 --handler main.dynamodb_events --publish --zip-file fileb://function.zip`

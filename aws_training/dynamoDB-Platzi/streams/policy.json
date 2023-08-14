@@ -11,7 +11,7 @@
               "dynamodb:GetShardIterator",
               "dynamodb:DescribeStream",
               "dynamodb:ListStreams",
-              "dynamodb:GetRecords"
+             "dynamodb:GetRecords"
           ],
           "Resource": "*"
       }
