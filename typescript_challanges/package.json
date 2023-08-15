@@ -12,6 +12,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "aws-sdk": "^2.1436.0",
     "nodemon": "^3.0.1"
   }
 }
