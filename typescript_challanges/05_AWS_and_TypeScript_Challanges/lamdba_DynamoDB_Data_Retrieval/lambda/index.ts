@@ -2,7 +2,7 @@ import { DynamoDB } from 'aws-sdk';
 import { APIGatewayProxyHandler } from 'aws-lambda';
 
 const dynamoDb = new DynamoDB.DocumentClient();
-const tableName = 'YourTableName';
+const tableName = 'TypeScriptTestingTable';
 
 export const handler: APIGatewayProxyHandler = async (event) => {
   const id = event.body?.id;

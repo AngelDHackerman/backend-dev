@@ -1,16 +1,29 @@
-import * as cdk from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as cdk from 'aws-cdk-lib'
+import * as lambda from 'aws-cdk-lib/aws-lambda'
+import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
+import { Construct } from 'constructs'
 
-export class LamdbaDynamoDbDataRetrievalStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props?: cdk.StackProps) {
+export class LamdbaDynamoDbDataRetrievalStack extends cdk.Stack { 
+  constructor(scope: Construct, id: string, props?: cdk.StackProps ) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
+    // Create DynamoDB table
+    const table = new dynamodb.Table(this, 'TypeScriptTestingTable', { 
+      partitionKey: { name: 'id', type: dynamodb.AttributeType.STRING },
+    })
 
-    // example resource
-    // const queue = new sqs.Queue(this, 'LamdbaDynamoDbDataRetrievalQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    // Create Lambda Function
+    const myLambdaFunction = new lambda.Function(this, 'MyTsFunction', { 
+      runtime: lambda.Runtime.NODEJS_14_X,
+      handler: 'index.handler',
+      code: lambda.Code.fromAsset('lambda'),
+      environment: { 
+        TABLE_NAME: table.tableName,
+      },
+    })
+
+    // Allow the lambda function read access to the DynamoDB table 
+
+    table.grantReadData(myLambdaFunction)
   }
 }
