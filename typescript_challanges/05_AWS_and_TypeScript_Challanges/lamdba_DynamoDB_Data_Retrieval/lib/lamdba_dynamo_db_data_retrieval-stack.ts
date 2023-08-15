@@ -1,6 +1,7 @@
 import * as cdk from 'aws-cdk-lib'
 import * as lambda from 'aws-cdk-lib/aws-lambda'
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb'
+import * as iam from 'aws-cdk-lib/aws-iam';
 import { Construct } from 'constructs'
 
 export class LamdbaDynamoDbDataRetrievalStack extends cdk.Stack { 
@@ -25,5 +26,11 @@ export class LamdbaDynamoDbDataRetrievalStack extends cdk.Stack {
     // Allow the lambda function read access to the DynamoDB table 
 
     table.grantReadData(myLambdaFunction)
+
+    // Add policy to allow GetItem operation on DynamoDB table
+    myLambdaFunction.addToRolePolicy(new iam.PolicyStatement({
+      actions: ['dynamodb:GetItem'],
+      resources: [table.tableArn],
+    }));
   }
 }
