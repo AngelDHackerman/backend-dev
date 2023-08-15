@@ -5,7 +5,9 @@ const dynamoDb = new DynamoDB.DocumentClient();
 const tableName = 'TypeScriptTestingTable';
 
 export const handler: APIGatewayProxyHandler = async (event) => {
-  const id = event.body?.id;
+  // Parse event.body to JSON
+  const body = typeof event.body === 'string' ? JSON.parse(event.body) : event.body;
+  const id = body?.id
 
   const params = {
     TableName: tableName,
