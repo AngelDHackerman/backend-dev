@@ -450,6 +450,39 @@ __Expected Output:__
 
 ## AWS and Typescript challanges: 
 
+
+### 0. Challenge: Notification of Changes in DynamoDB through Lambda and EventBridge
+
+#### Subchallenge 1: Create the DynamoDB Table
+__Context:__ You will need a DynamoDB table to store the data that will be monitored.
+
+__Steps:__
+1. __Create the DynamoDB Table:__ Use the AWS SDK or the AWS web interface to create a DynamoDB table with an appropriate primary key (e.g., `id`).
+
+#### Subchallenge 2: Create the Lambda Function to Record Changes
+__Context:__ This Lambda function will be triggered when there are changes in the DynamoDB table and will send an event to EventBridge.
+
+__Steps:__
+1. __Write the Code in TypeScript:__ Create a Lambda function in TypeScript that receives events from DynamoDB (add, update, delete) and publishes an event to EventBridge with the details.
+2. __Deploy the Lambda Function:__ Use the AWS SDK or the web interface to deploy the Lambda function to the cloud.
+
+#### Subchallenge 3: Configure EventBridge to Trigger the Lambda Function
+__Context:__ You will need to configure EventBridge to trigger the Lambda function when a change is detected in the DynamoDB table.
+
+__Steps:__
+1. __Create a Rule in EventBridge:__ Set up a rule in EventBridge that is triggered by events from the DynamoDB table.
+2. __Connect the Rule to the Lambda Function:__ Link the EventBridge rule to the Lambda function created in Subchallenge 2.
+
+#### Subchallenge 4: Test the Solution
+__Context:__ Verify that everything is working correctly.
+
+__Steps:__
+1. __Insert/Update/Delete an Item in DynamoDB:__ Perform an action in the DynamoDB table.
+2. __Verify the Lambda Function:__ Check the logs of the Lambda function to ensure that it was triggered correctly and sent the event to EventBridge.
+3. __Verify EventBridge:__ Check that EventBridge received the event and triggered the rule correctly.
+
+
+
 ### 1. Lambda: DynamoDB Data Retrieval
 
 __Description:__
@@ -509,3 +542,5 @@ __Input / Output:__
 `Input: Event from EventBridge`
 
 `Output: Log entry with event source and detail`
+
+
