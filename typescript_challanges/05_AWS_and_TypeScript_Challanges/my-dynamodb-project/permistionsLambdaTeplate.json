@@ -1,0 +1,35 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": "logs:CreateLogGroup",
+          "Resource": "your-ARN-here"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:CreateLogStream",
+              "logs:PutLogEvents"
+          ],
+          "Resource": [
+              "your-ARN-here"
+          ]
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "dynamodb:GetRecords",
+              "dynamodb:GetShardIterator",
+              "dynamodb:DescribeStream",
+              "dynamodb:ListStreams"
+          ],
+          "Resource": "your-ARN-here"
+      },
+      {
+          "Effect": "Allow",
+          "Action": "events:PutEvents",
+          "Resource": "your-ARN-here"
+      }
+  ]
+}
