@@ -40,3 +40,41 @@ Install the necessary dependencies for Lambda and DynamoDB:
 Install the type definitions for Lambda and DynamoDB: 
 
 `npm install --save-dev @types/aws-sdk @types/aws-lambda`
+
+
+## Step 4: Sending the lambda and dependecies to AWS
+
+Once the project is finish and compiled, make sure the file `index.js` and the compiled file `index.js` are both in the root of the project directory.
+Then inside the project directory execute this command: 
+
+`zip -r my-dynamodb-project.zip .`
+
+This will create a new .zip file that has to be uploaded to AWS lambda web interface.
+In order to test the lambda you can use this code for testing purposes: 
+
+```
+{
+  "Records": [
+    {
+      "eventID": "1",
+      "eventName": "INSERT",
+      "dynamodb": {
+        "Keys": {
+          "Id": {
+            "N": "101"
+          }
+        },
+        "NewImage": {
+          "Message": {
+            "S": "New item!"
+          },
+          "Id": {
+            "N": "101"
+          }
+        }
+      }
+    }
+  ]
+}
+
+``` 
