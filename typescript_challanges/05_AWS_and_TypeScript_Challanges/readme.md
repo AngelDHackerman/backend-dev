@@ -50,6 +50,47 @@ Then inside the project directory execute this command:
 `zip -r my-dynamodb-project.zip .`
 
 This will create a new .zip file that has to be uploaded to AWS lambda web interface.
+
+Add the right permistions to your lambda, you can use this template template: 
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Effect": "Allow",
+          "Action": "logs:CreateLogGroup",
+          "Resource": "your-ARN-here"
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "logs:CreateLogStream",
+              "logs:PutLogEvents"
+          ],
+          "Resource": [
+              "your-ARN-here"
+          ]
+      },
+      {
+          "Effect": "Allow",
+          "Action": [
+              "dynamodb:GetRecords",
+              "dynamodb:GetShardIterator",
+              "dynamodb:DescribeStream",
+              "dynamodb:ListStreams"
+          ],
+          "Resource": "your-ARN-here"
+      },
+      {
+          "Effect": "Allow",
+          "Action": "events:PutEvents",
+          "Resource": "your-ARN-here"
+      }
+  ]
+}
+```
+
 In order to test the lambda you can use this code for testing purposes: 
 
 ```
